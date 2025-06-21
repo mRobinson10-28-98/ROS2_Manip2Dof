@@ -13,16 +13,16 @@ using namespace std::chrono_literals;
 /* This example creates a subclass of Node and uses std::bind() to register a
 * member function as a callback from the timer. */
 
-class Manip2DofPublisher : public rclcpp::Node
+class Manip2Dof_SetGoalTraceCircle : public rclcpp::Node
 {
   public:
-    Manip2DofPublisher()
-    : Node("manip2dof_publisher"), count_(0)
+    Manip2Dof_SetGoalTraceCircle()
+    : Node("Manip2Dof_SetGoalTraceCircle"), count_(0)
     {
       mMsgPublisher_ = this->create_publisher<std_msgs::msg::String>("manip2dof_msg_topic", 10);
-      mPosePublisher_ = this->create_publisher<geometry_msgs::msg::Pose2D>("manip2dof_pose_topic", 10);
+      mPosePublisher_ = this->create_publisher<geometry_msgs::msg::Pose2D>("Manip2Dof_SetGoalTraceCircle_PoseTopic", 10);
       timer_ = this->create_wall_timer(
-      500ms, std::bind(&Manip2DofPublisher::timer_callback, this));
+      500ms, std::bind(&Manip2Dof_SetGoalTraceCircle::timer_callback, this));
     }
 
   private:
@@ -61,7 +61,7 @@ class Manip2DofPublisher : public rclcpp::Node
 int main(int argc, char * argv[])
 {
   rclcpp::init(argc, argv);
-  rclcpp::spin(std::make_shared<Manip2DofPublisher>());
+  rclcpp::spin(std::make_shared<Manip2Dof_SetGoalTraceCircle>());
   rclcpp::shutdown();
   return 0;
 }

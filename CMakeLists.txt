@@ -24,17 +24,17 @@ add_library(Manip2Dof src/Manip2Dof.cpp)
 target_include_directories(Manip2Dof PUBLIC ${PROJECT_SOURCE_DIR}/include/2dof_practice)
 
 # executables/nodes
-add_executable(manip2dof_talker src/Manip2DofPublisher.cpp)
-add_executable(manip2dof_listener src/Manip2DofSubscriber.cpp)
-target_link_libraries(manip2dof_listener Manip2Dof)
+add_executable(manip2dof_tracecircle_talker src/Manip2Dof_SetGoalTraceCircle.cpp)
+add_executable(manip2dof_solvegoal src/Manip2Dof_SolveGoal.cpp)
+target_link_libraries(manip2dof_solvegoal Manip2Dof)
 #target_include_directories(2dof_listener PUBLIC ${PROJECT_SOURCE_DIR}/include/2dof_practice)
 
-ament_target_Dependencies(manip2dof_talker rclcpp std_msgs geometry_msgs) 
-ament_target_Dependencies(manip2dof_listener rclcpp geometry_msgs) 
+ament_target_Dependencies(manip2dof_tracecircle_talker rclcpp std_msgs geometry_msgs) 
+ament_target_Dependencies(manip2dof_solvegoal rclcpp geometry_msgs) 
 
 install(TARGETS
-  manip2dof_talker
-  manip2dof_listener
+  manip2dof_tracecircle_talker
+  manip2dof_solvegoal
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()
