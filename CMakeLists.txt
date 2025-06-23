@@ -18,6 +18,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
+find_package(manip2dof_interfaces REQUIRED)
 
 # libraries
 add_library(Manip2Dof src/Manip2Dof.cpp)
@@ -30,7 +31,7 @@ target_link_libraries(manip2dof_solvegoal Manip2Dof)
 #target_include_directories(2dof_listener PUBLIC ${PROJECT_SOURCE_DIR}/include/2dof_practice)
 
 ament_target_Dependencies(manip2dof_tracecircle_talker rclcpp std_msgs geometry_msgs) 
-ament_target_Dependencies(manip2dof_solvegoal rclcpp geometry_msgs) 
+ament_target_Dependencies(manip2dof_solvegoal rclcpp std_msgs geometry_msgs manip2dof_interfaces) 
 
 install(TARGETS
   manip2dof_tracecircle_talker
