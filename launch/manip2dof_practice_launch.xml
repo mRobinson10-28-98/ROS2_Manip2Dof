@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="manip2dof_practice" exec="manip2dof_tracecircle_talker" name="talker" namespace="manip2dof" />
+  <node pkg="manip2dof_practice" exec="manip2dof_solvegoal" name="solver" namespace="manip2dof" />
+  <node pkg="pygame_mechanism_ros2_practice" exec="render_trace_circle" name="renderer" namespace="manip2dof" />
+</launch>

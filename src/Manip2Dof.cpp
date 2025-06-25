@@ -1,5 +1,4 @@
 #include <iostream>
-#include <Eigen/Dense>
 #include <math.h>
 
 #include "Manip2Dof.hpp"
@@ -24,8 +23,8 @@ void Manip2Dof::Fk(const double t1, const double t2)
     double l1 = mLinkLengths[0];
     double l2 = mLinkLengths[1];
 
-    x = l1 * cos(t1) + l2 * cos(t2);
-    y = l1 * sin(t1) + l2 * sin(t2);
+    mEndPos[0] = l1 * cos(t1) + l2 * cos(t2);
+    mEndPos[1] = l1 * sin(t1) + l2 * sin(t2);
 }
 
 void Manip2Dof::Ik(const double x, const double y)
@@ -50,4 +49,9 @@ std::array<double, 2> Manip2Dof::GetJointConfiguration()
 std::array<double, 2> Manip2Dof::GetLinkLengths()
 {
     return mLinkLengths;
+}
+
+std::array<double, 2> Manip2Dof::GetEndPos()
+{
+    return mEndPos;
 }

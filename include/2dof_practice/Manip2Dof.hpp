@@ -11,6 +11,7 @@ public:
     void Ik(const double x, const double y);
     std::array<double, 2> GetJointConfiguration();
     std::array<double, 2> GetLinkLengths();
+    std::array<double, 2> GetEndPos();
 
 private:
     // Link lengths 1 and 2
@@ -20,7 +21,5 @@ private:
     std::array<double, 2> mJointConfig {0,0};
 
     // EF position
-    double x {0};
-    double y {0};
-
+    std::array<double, 2> mEndPos {0,0};
 };

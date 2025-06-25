@@ -11,7 +11,7 @@
 using std::placeholders::_1;
 
 static const double LINK1_LENGTH = 3;
-static const double LINK2_LENGTH = 3;
+static const double LINK2_LENGTH = 2;
 
 class Manip2Dof_SolveGoal : public rclcpp::Node
 {
@@ -40,6 +40,11 @@ class Manip2Dof_SolveGoal : public rclcpp::Node
       sol.j2 = s[1];
 
       mSolutionPub->publish(sol);
+
+      // For testing
+      mManip.Fk(s[0], s[1]);
+      std::array<double, 2> fk_end_pos = mManip.GetEndPos();
+      RCLCPP_INFO(this->get_logger(), "Forward Kinematics end position: '%f','%f", fk_end_pos[0], fk_end_pos[1]);
     }
 
     static void service_response(const std::shared_ptr<manip2dof_interfaces::srv::Manip2DofProperties::Request> request,
