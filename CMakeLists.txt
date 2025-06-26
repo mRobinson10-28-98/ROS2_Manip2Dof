@@ -38,4 +38,9 @@ install(TARGETS
   manip2dof_solvegoal
   DESTINATION lib/${PROJECT_NAME})
 
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 ament_package()
