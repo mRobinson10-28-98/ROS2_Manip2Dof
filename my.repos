@@ -1,0 +1,9 @@
+repositories:
+  manip2dof_interfaces:
+    type: git
+    url: https://github.com/mRobinson10-28-98/manip2dof_interfaces
+    version: master
+  pygame_mechanism_ros2_pratice:
+    type: git
+    url: https://github.com/mRobinson10-28-98/pygame_mechanism_ros2_practice
+    version: master
