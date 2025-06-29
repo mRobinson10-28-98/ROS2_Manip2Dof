@@ -10,16 +10,12 @@ Manip2Dof::Manip2Dof()
 
 Manip2Dof::Manip2Dof(double l1, double l2)
 {
-    std::cout << "Creating 2-DoF Manipulator Object\n";
-
     mLinkLengths[0] = l1;
     mLinkLengths[1] = l2;
 }
 
 void Manip2Dof::Fk(const double t1, const double t2)
-{
-    std::cout << "Forward Kinematics for: " << t1 << ", " << t2 << std::endl;
-    
+{    
     double l1 = mLinkLengths[0];
     double l2 = mLinkLengths[1];
 
@@ -29,8 +25,6 @@ void Manip2Dof::Fk(const double t1, const double t2)
 
 void Manip2Dof::Ik(const double x, const double y)
 {
-    std::cout << "Inverse Kinematics for " << x << ", " << y << std::endl;
-
     double l1 = mLinkLengths[0];
     double l2 = mLinkLengths[1];
 
