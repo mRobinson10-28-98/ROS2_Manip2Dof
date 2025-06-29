@@ -19,7 +19,7 @@ Next, install the other package dependencies from my github using the vcs UNIX t
 
 'vcs import . --input <my.repos path>'
 
-Make sure to replace <my.repos path> with the path to the my.repos file located at the top level of this repo; if running this command from the <ros2_toplevel>/src directory, the path would be 'manip2dof_practice/my.repos'
+Make sure to replace <my.repos path> with the path to the my.repos file located at the top level of this repo; if running this command from the <ros2_toplevel>/src directory, the path would be 'ROS2_Manip2Dof/my.repos'
 
 ---
 To Run: 
